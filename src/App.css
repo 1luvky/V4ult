@@ -1,38 +1,17 @@
-.App {
-  text-align: center;
+/* In a global CSS file like index.css or App.css */
+
+body {
+  background-color: #000000; /* Pure black for the entire website background, matching the silhouette */
+  color: #e5e5e5; /* Default text color for the body, similar to Netflix */
+  font-family: 'Inter', sans-serif; /* Using Inter font as recommended */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* You might also want to ensure the root HTML element is full height */
+html {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Any other global styles you might have */

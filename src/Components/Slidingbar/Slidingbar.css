@@ -1,0 +1,150 @@
+/* General container for the carousel */
+.carousel-wrapper {
+  width: 95%; /* Make it slightly less than full width for some margin */
+  margin: 40px auto; /* Center the carousel and add vertical spacing */
+  padding: 0 20px; /* Add horizontal padding inside the wrapper */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+/* Title for the carousel section */
+.carousel-title {
+  color: #e5e5e5; /* Netflix-like text color */
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left; /* Align title to the left */
+  padding-left: 10px; /* Small indent for the title */
+}
+
+/* Styling for each individual movie card */
+.movie-card-link {
+  display: block; /* Ensures the link takes up the full card space */
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color from parent */
+  outline: none; /* Remove outline on focus */
+}
+
+.movie-card {
+  position: relative;
+  background-color: #141414; /* Dark background for cards */
+  border-radius: 8px; /* Rounded corners for the cards */
+  overflow: hidden; /* Ensures image corners are rounded */
+  margin: 0 8px; /* Spacing between movie cards */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  height: 100%; /* Ensure cards take full height available in slider item */
+}
+
+/* Hover effect for movie cards - similar to Netflix */
+.movie-card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); /* More prominent shadow on hover */
+  z-index: 10; /* Bring hovered card to front */
+}
+
+/* Movie poster image styling */
+.movie-poster {
+  width: 100%; /* Image takes full width of its container */
+  height: 250px; /* Fixed height for consistency, adjust as needed */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Text styling within the movie card */
+.movie-title {
+  color: #fff; /* White text for title */
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 10px 5px; /* Padding around title */
+  text-align: center;
+  white-space: nowrap; /* Prevent title from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.movie-rating {
+  color: #b3b3b3; /* Lighter grey for rating */
+  font-size: 0.9rem;
+  padding: 0 10px 10px; /* Padding around rating */
+  text-align: center;
+}
+
+/* react-slick specific overrides for dots */
+.slick-dots {
+  bottom: -30px; /* Position dots below the carousel */
+}
+
+.slick-dots li button:before {
+  font-size: 10px; /* Size of the dots */
+  color: #b3b3b3; /* Color of inactive dots */
+  opacity: 0.75;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #e5e5e5; /* Color of active dot */
+  opacity: 1;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .carousel-wrapper {
+    width: 98%;
+    padding: 0 10px;
+  }
+  .movie-poster {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+  .movie-title {
+    font-size: 0.9rem;
+  }
+  .movie-rating {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 1.5rem;
+  }
+  .movie-poster {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    width: 100%;
+    padding: 0 5px;
+  }
+  .carousel-title {
+    font-size: 1.3rem;
+    text-align: center; /* Center title on very small screens */
+    padding-left: 0;
+  }
+  .movie-card {
+    margin: 0 5px;
+  }
+  .movie-poster {
+    height: 150px;
+  }
+  .movie-title {
+    font-size: 0.85rem;
+  }
+  .movie-rating {
+    font-size: 0.75rem;
+  }
+}
+
+/* Ensure the slider items themselves have some flexibility */
+/* react-slick adds inline styles, but these can help */
+.slick-slide > div {
+  height: 100%; /* Ensure the div wrapping the Link takes full height */
+  display: flex; /* Helps align content within the slide */
+  justify-content: center; /* Center cards horizontally in their slide space */
+  align-items: center; /* Center cards vertically in their slide space */
+}

@@ -1,0 +1,87 @@
+.Navbar{
+  
+    display: flex;
+    background-color: transparent;
+    position: relative; /* so it stays on top */
+    width: 100%;
+    z-index: 10;
+    color: white; /* for visibility */
+}
+
+
+
+.Profile{
+    margin-left: 200px;
+    color: white;
+    
+}
+.relative{
+    color: white;
+    text-decoration: none;
+    
+}
+.Sitenamelink{
+    text-decoration: none;
+}
+.Sitename{
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(247, 242, 242);
+    font-weight: bolder;
+    font-size: 40px;
+    display: flex;
+    margin-left: 35px;
+    margin-top: 18px;
+    align-items: center;    
+    text-decoration: none;
+}   
+.Background{
+    width: 100%;
+    height: auto;
+}
+
+.right{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(247, 242, 242);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 360px;
+    
+}
+
+.Button{
+    color: white;
+    text-decoration: none;
+}
+
+.Search{
+    margin-left: 200px;
+    height: 30px;
+    width: 250px;
+    background: rgb(196, 186, 186, 0.2)    ;
+    border: 5px;          /* optional: remove border */
+    color: white;          /* change as needed */
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 50px;
+}
+.logout{
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+.search-bar {
+  /* Enhanced styling for the search bar */
+  width: 250px; /* Make it longer initially */
+  max-width: 100%; /* Ensure it's responsive */
+  padding: 10px 15px 10px 40px; /* Increased padding, left padding for icon */
+  border: 1px solid #555; /* Softer border */
+  border-radius: 25px; /* Pill shape */
+  background-color: rgba(255, 255, 255, 0.05); /* Less opaque, subtle transparency */
+  color: #e5e5e5;
+  font-size: 1rem;
+  transition: width 0.3s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}

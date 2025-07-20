@@ -1,0 +1,47 @@
+.movie-detail-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.movie-detail-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.movie-detail-poster {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.movie-detail-right {
+  flex: 2;
+  min-width: 300px;
+}
+
+.movie-detail-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.watchlist-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #ff3b3b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.watchlist-btn:hover {
+  background-color: #e62828;
+}

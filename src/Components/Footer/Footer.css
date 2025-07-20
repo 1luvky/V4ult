@@ -1,0 +1,71 @@
+/* src/components/Footer.css */
+
+.footer-container {
+  background-color: #0d0d0d; /* A slightly darker black for the footer */
+  color: #b3b3b3; /* Light grey text */
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 50px; /* Space above the footer */
+  border-top: 1px solid #222; /* Subtle top border */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  color: #b3b3b3;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+  color: #e5e5e5; /* Lighter on hover */
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .footer-link {
+    display: block; /* Stack links vertically on small screens */
+    margin: 10px 0;
+  }
+}
+
+/* In a global CSS file like index.css or App.css */
+
+html, body, #root { /* Ensure html, body, and the root div (#root) take full height */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000; /* Pure black for the entire website background */
+  color: #e5e5e5; /* Default text color for the body, similar to Netflix */
+  font-family: 'Inter', sans-serif; /* Using Inter font as recommended */
+  display: flex; /* Make body a flex container */
+  flex-direction: column; /* Arrange children in a column */
+  min-height: 100vh; /* Ensure body takes at least the full viewport height */
+}
+
+/* The .App div (or whatever is the direct child of #root) should grow */
+.App {
+  display: flex; /* Make App a flex container */
+  flex-direction: column; /* Arrange its children in a column */
+  flex-grow: 1; /* Allow it to grow and take available space */
+}
+
+/* You might need to adjust other existing styles if they conflict with flexbox */

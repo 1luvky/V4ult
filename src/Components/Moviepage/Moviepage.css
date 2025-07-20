@@ -1,0 +1,58 @@
+/* Moviepage.css */
+
+.movies-page-container {
+  padding: 2rem;
+  color: white;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+.movies-page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.movie-card {
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 2/3;
+}
+
+.movie-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.movie-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.movie-rating {
+  font-size: 0.9rem;
+  color: #ffd700;
+}
