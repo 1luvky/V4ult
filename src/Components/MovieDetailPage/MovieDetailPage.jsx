@@ -23,7 +23,7 @@ const MovieDetailPage = () => {
     }
     const fetchMovie = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/movie/${id}`);
+        const res = await fetch(`https://devcomm-backend-3obc.onrender.com/api/movie/${id}`);
         const data = await res.json();
         setMovie(data);
         sessionStorage.setItem(`movie-${id}`, JSON.stringify(data));

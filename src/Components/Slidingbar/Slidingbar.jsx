@@ -28,7 +28,7 @@ const Slidingbar = () => {
       setLoading(false);
       return; // Don't call the API again
     }
-    axios.get("http://localhost:5000/api/movies-list")
+    axios.get("https://devcomm-backend-3obc.onrender.com/api/movies-list")
       .then((res) => {
         const fetchedMovies = res.data.data.movies.map(movie => ({
           id: movie.id,
