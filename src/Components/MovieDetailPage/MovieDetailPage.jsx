@@ -14,11 +14,20 @@ const MovieDetailPage = () => {
   const added = watchlist.some(item => item.id === id);
 
   useEffect(() => {
+    const cachedMovie = sessionStorage.getItem(`movie-${id}`);
+
+    if (cachedMovie) {
+      setMovie(JSON.parse(cachedMovie));
+      setLoading(false);
+      return;
+    }
     const fetchMovie = async () => {
       try {
         const res = await fetch(`http://localhost:5000/api/movie/${id}`);
         const data = await res.json();
         setMovie(data);
+        sessionStorage.setItem(`movie-${id}`, JSON.stringify(data));
+
       } catch (err) {
         console.error("Failed to fetch movie:", err);
       } finally {

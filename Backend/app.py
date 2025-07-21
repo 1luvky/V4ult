@@ -11,7 +11,7 @@ def get_movie_detail(movie_id):
     querystring = {"movie_id": movie_id}
 
     headers = {
-        "x-rapidapi-key": "f5e06178e6msh3dbe951a8063592p10a94bjsn15759e0d8496 ",
+        "x-rapidapi-key": "3fd6ed0019msh33503b3cd0b7897p12980bjsn2e6f7da36fe8",
         "x-rapidapi-host": "movie-database-api1.p.rapidapi.com"
     }
 
@@ -52,7 +52,7 @@ def get_movies_list():
         "with_rt_ratings": "false"
     }
     headers = {
-        "x-rapidapi-key": "f5e06178e6msh3dbe951a8063592p10a94bjsn15759e0d8496",
+        "x-rapidapi-key": "3fd6ed0019msh33503b3cd0b7897p12980bjsn2e6f7da36fe8",
         "x-rapidapi-host": "movie-database-api1.p.rapidapi.com"
     }
 
@@ -60,10 +60,6 @@ def get_movies_list():
         response = requests.get(url, headers=headers, params=querystring)
         response.raise_for_status()
         data = response.json()
-
-        # You might want to process and filter this data similar to get_movies
-        # to ensure it has posters, titles, etc., in a consistent format
-        # For now, we'll return the raw response from this new API.
         return jsonify(data)
 
     except requests.exceptions.RequestException as e:
@@ -73,51 +69,13 @@ def get_movies_list():
     except Exception as e:
         return jsonify({"error": f"An unexpected error occurred while fetching movies list: {e}"}), 500
 
-@app.route('/api/series-list')
-def get_series_list():
-    url = "https://movies-tv-shows-database.p.rapidapi.com/"
-    querystring = {"page": "1"}
-    headers = {
-        "x-rapidapi-key": "b4e3442fe8msh7b52a38b72f00bep1e398djsn4d0607892190",
-        "x-rapidapi-host": "movies-tv-shows-database.p.rapidapi.com",
-        "Type": "get-trending-shows" # This header is crucial for this API
-    }
-
-    try:
-        response = requests.get(url, headers=headers, params=querystring)
-        response.raise_for_status()
-        data = response.json()
-
-        processed_series = []
-        # The response structure for this API is under 'tv_results'
-        series_results = data.get('tv_results', []) 
-
-        if isinstance(series_results, list):
-            for show in series_results:
-                processed_series.append({
-                    "id": show.get("imdb_id"), # Use imdb_id as the unique ID
-                    "title": show.get("title"),
-                    "poster": "https://placehold.co/226x300/333333/FFFFFF?text=No+Image", # Placeholder as no poster URL in this response
-                    "rating": "N/A" # Placeholder as no rating in this response
-                })
-        
-        return jsonify(processed_series)
-
-    except requests.exceptions.RequestException as e:
-        return jsonify({"error": f"Error fetching series list from API: {e}"}), 500
-    except ValueError:
-        return jsonify({"error": "Failed to decode JSON from series API response"}), 500
-    except Exception as e:
-        return jsonify({"error": f"An unexpected error occurred while fetching series: {e}"}), 500
-
-
 
 @app.route('/api/movies')
 def get_movies():
     url = "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming"
 
     headers = {
-        "x-rapidapi-key": "b4e3442fe8msh7b52a38b72f00bep1e398djsn4d0607892190",
+        "x-rapidapi-key": "3fd6ed0019msh33503b3cd0b7897p12980bjsn2e6f7da36fe8",
         "x-rapidapi-host": "moviesdatabase.p.rapidapi.com"
     }
 

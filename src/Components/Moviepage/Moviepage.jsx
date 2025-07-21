@@ -13,6 +13,13 @@ const Moviepage = () => {
   const FALLBACK_IMAGE_URL = "https://placehold.co/226x300/333333/FFFFFF?text=No+Image";
 
   useEffect(() => {
+    const cachedMovies = sessionStorage.getItem("allMovies");
+
+        if (cachedMovies) {
+            setMovies(JSON.parse(cachedMovies));
+            setLoading(false);
+            return;
+        }
     axios.get("http://localhost:5000/api/movies-list")
       .then((res) => {
         const fetchedMovies = res.data.data.movies.map(movie => ({
@@ -23,6 +30,7 @@ const Moviepage = () => {
         })).filter(movie => movie.poster);
 
         setMovies(fetchedMovies);
+        sessionStorage.setItem("allMovies", JSON.stringify(fetchedMovies));
         setLoading(false);
       })
       .catch((err) => {
